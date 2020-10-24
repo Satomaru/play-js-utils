@@ -1,5 +1,5 @@
 const playJsUtils = {
-  apl: require('./api-utils');
+  api: require('./api-utils')
 };
 
 module.exports = playJsUtils;
