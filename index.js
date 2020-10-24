@@ -1,11 +1,11 @@
-module.exports = {
+const playJsUtils = {
   toArray: (value) => (Array.isArray(value)) ? value : [value],
 
   isNullish: (value) => value === null || value === undefined,
 
   compare: (value1, value2) => {
-    const nullishValue1 = apiUtils.isNullish(value1);
-    const nullishValue2 = apiUtils.isNullish(value2);
+    const nullishValue1 = playJsUtils.isNullish(value1);
+    const nullishValue2 = playJsUtils.isNullish(value2);
 
     if (nullishValue1) {
       return (nullishValue2) ? 0 : -1;
@@ -27,3 +27,5 @@ module.exports = {
     return array.some((value) => expected.includes(value));
   }
 }
+
+module.exports = playJsUtils;
