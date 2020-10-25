@@ -22,9 +22,25 @@ const playJsUtils = {
     return (value1 < value2) ? -1: 1;
   },
 
-  containsOneOf: (array, ...oneOf) => {
-    const expected = oneOf.flat();
-    return array.some((value) => expected.includes(value));
+  comparator: {
+    create: (extractor, reverse = false) =>
+      (value1, value2) => {
+        const result = playJsUtils.compare(extractor(value1), extractor(value2));
+        return (reverse) ? -result : result;
+      },
+
+    bundle: (...comparators) =>
+      (value1, value2) => {
+        for (const comparator of comparators) {
+          const result = comparator(value1, value2);
+
+          if (result !== 0) {
+            return result;
+          }
+        }
+
+        return 0;
+      }
   }
 }
 
