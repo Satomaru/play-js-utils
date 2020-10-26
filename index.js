@@ -1,4 +1,8 @@
+const Rect = require('./rect');
+
 const playJsUtils = {
+  Rect: Rect,
+
   toArray: (value) => (Array.isArray(value)) ? value : [value],
 
   isNullish: (value) => value === null || value === undefined,
