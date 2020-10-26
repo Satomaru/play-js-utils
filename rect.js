@@ -10,10 +10,6 @@ class Rect {
     return new Rect(array);
   }
 
-  get cell(x, y) {
-    return this.array[y][x];
-  }
-
   constructor(array) {
     this.array = array;
   }
