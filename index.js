@@ -1,6 +1,18 @@
 const playJsUtils = {
+  Line: require('./line'),
   Position: require('./position'),
   Rect: require('./rect'),
+
+  random: (min, max) => Math.floor(Math.random() * (max - min + 1)) + min,
+
+  shuffle: (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const x = playJsUtils.random(0, i);
+      [array[i], array[x]] = [array[x], array[i]];
+    }
+
+    return array;
+  },
 
   toArray: (value) => (Array.isArray(value)) ? value : [value],
 
