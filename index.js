@@ -1,7 +1,6 @@
-const Rect = require('./rect');
-
 const playJsUtils = {
-  Rect: Rect,
+  Position: require('./position'),
+  Rect: require('./rect'),
 
   toArray: (value) => (Array.isArray(value)) ? value : [value],
 

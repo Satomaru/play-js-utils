@@ -13,7 +13,7 @@ class Rect {
   constructor(array) {
     this.array = array;
   }
-  
+
   toArray(callback) {
     return this.array.map((row, y) =>
       row.map((cell, x) => callbacl(x, y, cell))
